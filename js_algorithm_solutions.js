@@ -1,6 +1,6 @@
 var arrayList = [
-    5, 1, -5, 2, 10, -4, 15, 30, 11, 35, 11, -54, 22, 10, -50, 21, -15, 12, 20,
-    -14, 25, 85, 71, -35, 12, 100, 31, 13,
+    5, 1, -5, 0, 2, 10, -4, 15, 30, 11, 35, 11, -54, 22, 10, 0, -50, 21, -15,
+    12, 20, -14, 25, 85, 71, 0, -35, 12, 100, 31, 13,
 ];
 
 //linear time complexity O(n)
@@ -80,3 +80,31 @@ function aVeryBigSum(arr) {
 console.log(
     aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005])
 );
+
+//plus minus
+//Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero
+
+function plusMinus(arr) {
+    var arrLength = arr.length;
+    var positive = 0;
+    var negative = 0;
+    var zero = 0;
+
+    for (let i in arr) {
+        if (arr[i] == 0) {
+            zero++;
+        } else if (0 > arr[i]) {
+            negative++;
+        } else if (arr[i] > 0) {
+            positive++;
+        }
+    }
+
+    (zero / arrLength).toFixed(6);
+
+    console.log(`zeros: ${(zero / arrLength).toFixed(6)}`);
+    console.log(`negatives : ${(negative / arrLength).toFixed(6)}`);
+    console.log(`positives: ${(positive / arrLength).toFixed(6)}`);
+}
+
+plusMinus(arrayList);
