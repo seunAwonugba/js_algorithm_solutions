@@ -108,3 +108,22 @@ function plusMinus(arr) {
 }
 
 plusMinus(arrayList);
+
+//staircase
+function staircase(num) {
+    for (let index = 1; index <= num; index++) {
+        const space = num - index;
+
+        for (let j = 1; j <= space; j++) {
+            process.stdout.write(" ");
+        }
+
+        for (let j = 1; j <= index; j++) {
+            process.stdout.write("#");
+        }
+
+        process.stdout.write("\n");
+    }
+}
+
+staircase(5);
