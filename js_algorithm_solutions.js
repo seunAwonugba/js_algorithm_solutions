@@ -127,3 +127,17 @@ function staircase(num) {
 }
 
 staircase(5);
+
+function minMaxSum(arr) {
+    var totalSum = 0;
+    var sorted = arr.sort((a, b) => {
+        return a - b;
+    });
+    for (i in arr) {
+        totalSum += arr[i];
+    }
+
+    console.log(`${totalSum - sorted.pop()} ${totalSum - sorted.shift()}`);
+}
+
+minMaxSum([1, 2, 3, 4, 5]);
