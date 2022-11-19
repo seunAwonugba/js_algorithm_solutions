@@ -141,3 +141,52 @@ function minMaxSum(arr) {
 }
 
 minMaxSum([1, 2, 3, 4, 5]);
+
+function birthdayCakeCandles(candles) {
+    var maxCandle = 0;
+    var freq = 0;
+
+    for (let i in candles) {
+        if (candles[i] > maxCandle) {
+            maxCandle = candles[i];
+        }
+    }
+
+    for (let i in candles) {
+        if (candles[i] == maxCandle) {
+            freq++;
+        }
+    }
+
+    console.log(freq);
+}
+
+birthdayCakeCandles([3, 2, 1, 3]);
+
+function gradingStudents(arr) {
+    var returningArr = [];
+    for (let i in arr) {
+        if (arr[i] < 38) {
+            returningArr.push(arr[i]);
+        } else if (arr[i] % 10 > 5) {
+            var modDifference = 10 - (arr[i] % 10);
+            if (modDifference < 3) {
+                returningArr.push(arr[i] + modDifference);
+            } else {
+                returningArr.push(arr[i]);
+            }
+        } else if (arr[i] % 10 == 5) {
+            returningArr.push(arr[i]);
+        } else if (arr[i] % 10 < 5) {
+            var modDifference = 5 - (arr[i] % 10);
+            if (modDifference < 3) {
+                returningArr.push(arr[i] + modDifference);
+            } else {
+                returningArr.push(arr[i]);
+            }
+        }
+    }
+    return returningArr;
+}
+
+console.log(gradingStudents([73, 67, 38, 33]));
