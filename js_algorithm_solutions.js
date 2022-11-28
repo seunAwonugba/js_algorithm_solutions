@@ -190,3 +190,17 @@ function gradingStudents(arr) {
 }
 
 console.log(gradingStudents([73, 67, 38, 33]));
+
+function divisibleSumPairs(k, arr) {
+    var counter = 0;
+    for (let index = 0; index < arr.length; index++) {
+        for (let index2 = index + 1; index2 < arr.length; index2++) {
+            if ((arr[index] + arr[index2]) % k == 0) {
+                counter++;
+            }
+        }
+    }
+    return counter;
+}
+
+console.log(divisibleSumPairs(5, [1, 2, 3, 4, 5, 6]));
