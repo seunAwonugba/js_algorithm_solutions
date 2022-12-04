@@ -204,3 +204,35 @@ function divisibleSumPairs(k, arr) {
 }
 
 console.log(divisibleSumPairs(5, [1, 2, 3, 4, 5, 6]));
+
+function migratoryBirds(arr) {
+    value = 0;
+    var map = new Map();
+    for (let i in arr) {
+        if (map.has(arr[i])) {
+            map.set(arr[i], map.get(arr[i]) + 1);
+        } else {
+            map.set(arr[i], 1);
+        }
+    }
+
+    const sortedMap = new Map([...map].sort((a, b) => a[0] - b[0]));
+    const key = sortedMap.keys();
+    const val = sortedMap.values();
+
+    console.log(`The key -> ${key}`);
+    console.log(`The val -> ${val}`);
+
+    console.log(Math.max(...sortedMap.values()));
+    //todo get key from value
+}
+
+migratoryBirds([2, 2, 2, 5, 5, 7, 7]);
+
+function drawingBook(n, p) {
+    var front = p / 2;
+    var back = n / 2 - front;
+    console.log(Math.min(front, back));
+}
+
+drawingBook(37455, 29835);
