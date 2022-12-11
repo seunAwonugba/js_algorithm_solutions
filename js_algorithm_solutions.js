@@ -236,3 +236,24 @@ function drawingBook(n, p) {
 }
 
 drawingBook(37455, 29835);
+
+function electronicsShop(key, drives, num) {
+    var arr = [];
+    for (let i in key) {
+        for (let j in drives) {
+            var addition = key[i] + drives[j];
+            if (addition <= num) {
+                arr.push(addition);
+            }
+        }
+    }
+    console.log(arr);
+
+    if (arr.length <= 0) {
+        return -1;
+    } else {
+        return Math.max(...arr);
+    }
+}
+
+console.log(electronicsShop([40, 50, 60], [4, 8, 12], 60));
