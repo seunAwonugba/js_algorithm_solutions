@@ -257,3 +257,18 @@ function electronicsShop(key, drives, num) {
 }
 
 console.log(electronicsShop([40, 50, 60], [4, 8, 12], 60));
+
+function catsAndAMouse(x, y, z) {
+    const diffA = Math.abs(x - z);
+    const diffB = Math.abs(y - z);
+
+    if (diffA > diffB) {
+        return "Cat B";
+    } else if (diffB > diffA) {
+        return "Cat A";
+    } else {
+        return "Mouse C";
+    }
+}
+
+console.log(catsAndAMouse(2, 5, 4));
